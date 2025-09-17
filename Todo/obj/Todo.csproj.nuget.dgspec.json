@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\balta.io\\fundamentos-apsnet6\\Todo\\Todo.csproj": {}
+    "C:\\dev\\balta.io\\back\\fundamentos-apsnet6\\Todo\\Todo.csproj": {}
   },
   "projects": {
-    "C:\\dev\\balta.io\\fundamentos-apsnet6\\Todo\\Todo.csproj": {
+    "C:\\dev\\balta.io\\back\\fundamentos-apsnet6\\Todo\\Todo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\balta.io\\fundamentos-apsnet6\\Todo\\Todo.csproj",
+        "projectUniqueName": "C:\\dev\\balta.io\\back\\fundamentos-apsnet6\\Todo\\Todo.csproj",
         "projectName": "Todo",
-        "projectPath": "C:\\dev\\balta.io\\fundamentos-apsnet6\\Todo\\Todo.csproj",
+        "projectPath": "C:\\dev\\balta.io\\back\\fundamentos-apsnet6\\Todo\\Todo.csproj",
         "packagesPath": "C:\\Users\\JOAOV\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\balta.io\\fundamentos-apsnet6\\Todo\\obj\\",
+        "outputPath": "C:\\dev\\balta.io\\back\\fundamentos-apsnet6\\Todo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
