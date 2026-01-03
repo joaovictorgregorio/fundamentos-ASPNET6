@@ -11,6 +11,8 @@ namespace Blog.Controllers
     [Route("v1")]
     public class CategoryController : ControllerBase
     {
+        #region GET
+        
         [HttpGet("categories")]
         public async Task<IActionResult> GetAsync([FromServices]BlogDataContext context)
         {
@@ -25,6 +27,7 @@ namespace Blog.Controllers
             }
         }
 
+        
         [HttpGet("categories/{id:int}")]
         public async Task<IActionResult> GetByIdAsync([FromServices] BlogDataContext context, [FromRoute] int id)
         {
@@ -34,7 +37,7 @@ namespace Blog.Controllers
                     .Categories
                     .FirstOrDefaultAsync(x => x.Id == id);
 
-                if (category == null) { return NotFound(new ResultViewModel<Category>("Categoria não encontrada!")); }
+                if (category == null) { return NotFound(new ResultViewModel<Category>("Categoria não encontrada!")); } 
 
                 return Ok(new ResultViewModel<Category>(category));
             }
@@ -43,7 +46,11 @@ namespace Blog.Controllers
                 return StatusCode(500, new ResultViewModel<Category>("05XE7 - Falha interna no servidor"));
             }
         }
+        
+        #endregion
 
+        #region POST
+        
         [HttpPost("categories")]
         public async Task<IActionResult> PostAsync([FromServices] BlogDataContext context, [FromBody] EditorCategoryViewModel model)
         {
@@ -52,7 +59,7 @@ namespace Blog.Controllers
             try
             {
                 var category = new Category
-                { 
+                {  
                     Id = 0,
                     Name = model.Name,
                     Slug = model.Slug.ToLower(),
@@ -72,7 +79,11 @@ namespace Blog.Controllers
                 return StatusCode(500, new ResultViewModel<Category>("05XE2 - Falha interna no servidor"));
             }
         }
+        
+        #endregion
 
+        #region PUT
+        
         [HttpPut("categories/{id:int}")]
         public async Task<IActionResult> PutAsync([FromServices] BlogDataContext context, [FromRoute] int id, [FromBody] EditorCategoryViewModel model)
         {
@@ -99,6 +110,10 @@ namespace Blog.Controllers
                 return StatusCode(500, new ResultViewModel<Category>("05XE4 - Falha interna no servidor"));
             }
         }
+        
+        #endregion
+        
+        #region DELETE
 
         [HttpDelete("categories/{id:int}")]
         public async Task<IActionResult> DeleteAsync([FromServices] BlogDataContext context, [FromRoute] int id)
@@ -123,5 +138,7 @@ namespace Blog.Controllers
                 return StatusCode(500, new ResultViewModel<Category>("05XE6 - Falha interna no servidor"));
             }
         }
+        
+        #endregion
     }
 }

@@ -11,3 +11,4 @@ namespace Blog.Controllers
         public IActionResult Get() => Ok();
     }
 }
+ 
